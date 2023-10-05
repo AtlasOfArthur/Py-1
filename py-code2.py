@@ -54,7 +54,7 @@ print("------------------------------------------------------------")
 print()
 #-------------------------------------------------------------#
   #Sisäkkäinen funktiokutsu ~~'Ketjutettu funktiokutsu'
-  
+
 #Tapa1
 num = input("Anna positinen numero: ")
 num = float(num)
@@ -83,3 +83,6 @@ alkuluku = float(input("Syötä luku: "))
 tulos = vahennetty_kolmella(tuplattu(kahdella_korotettu(neliojuuri(alkuluku))))
 
 print("Tulos:", tulos)
+print("------------------------------------------------------------")
+print()
+#-------------------------------------------------------------#
