@@ -1,7 +1,8 @@
 pii = 3.1415926536
 
 print(pow(pii, pii)) #pii potenssiin pii
-
+print("------------------------------------------------------------------------")
+print()
 #------------------------------------------------------------------------------#
   # [start:stop:step] (by index)
 name = "Arthur Harjama"
@@ -15,6 +16,8 @@ print(fNameToArt + " " + lName)
 print(funkyName)
 print(reversedName)
 print(funkyReversed_from_reversedName) #Oma räpellys testi. Näköjään toimii :)
+print("------------------------------------------------------------------------")
+print()
 
 #------------------------------------------------------------------------------#
   #slice()
@@ -26,7 +29,8 @@ slicePedia = slice(17, -4)
 
 print(website[sliceSchumann])
 print(website2[slicePedia])
-
+print("------------------------------------------------------------------------")
+print()
 #------------------------------------------------------------------------------#
   #Listat ja joitakin .metodeja
 
@@ -49,7 +53,8 @@ items.clear() # Tyhjentää koko listan
 items.append("Tyhjä lista") #Lisää 'Tyhjä lista' itemin listaan
 items[0] = "Ei ole tyhjä lista" # Korvaa 'Tyhjä lista' itemin
 print(items) 
-
+print("------------------------------------------------------------------------")
+print()
 #------------------------------------------------------------------------------#
   # 2D listat (Aka. multi dimensional lists)
 
@@ -62,7 +67,8 @@ print(ravinto) # Tulostaa ~ [[juomat lista][ruoat lista][ jälkkärit lista]]
 print(ravinto[0][1]) # tulostaa Kahvi
 print(ravinto[1][2]) # tulostaa Lohi uuniperunoiden kera 
 print(ravinto[2][3]) # tulostaa Hedelmäjäädyke
-
+print("------------------------------------------------------------------------")
+print()
 #------------------------------------------------------------------------------#
   # Tuple >>> Tietorakenne Pythonissa, joka muistuttaa listaa, mutta se on muuttumaton.
 
@@ -76,4 +82,80 @@ print(henkilötiedotTuple.index(-1)) # tulostaa 1, koska 8 on indeksin 1 kohdall
 if "Amias" in henkilötiedotTuple:
     print("Not born yet. Stay tuned!")
 print(henkilötiedotTuple)
+print("------------------------------------------------------------------------")
+print()
+#------------------------------------------------------------------------------#
+  # Set{} >>> Ei ole määriteltyä järjestystä(unindeksed), ja se ei salli duplikaatteja.
 
+aterimet = {"haarukka","lusikka","veitsi"} # Set on nopeampi kuin list
+  # Voit lisätä duplikaatteja listaan, mutta vain yksi kutakin tulostuu
+astiat = {"kulho","lautanen","kuppi"}
+for x in aterimet:
+    print(x) # Koska järjestys on määrittelemätön, lista voi tulostua eri järjestyksessä missä se on määritetty.
+    # Esim: Ensimäisessä tulostuksessa tulostui järjestyksessä >>> lusikka, veitsi, haarukka
+
+# aterimet.append("servetti") >>> .append ei toimi. Sensijaan poistamiseen toimii .remove, kuten listoissa.
+# Sen sijaan käytä >>> .add
+# .clear tyhjentää setin kokonaan, kuten listan.
+aterimet.add("teelusikka")
+print(aterimet)
+aterimet.update(astiat) # Lisää astiat setin sisällön aterimet settiin
+print(aterimet)
+aterimet.add("servetti")
+kattaus = aterimet.union(astiat) # Yhdistää aterimet ja astiat setit uuteen settiin (kattaus)
+print()
+print(aterimet)
+print(astiat)
+print(kattaus)
+
+astiat.add("maitolasi")
+print(astiat.difference(kattaus)) # tulostaa ne jotka löytyy vain toisesta listoista (astiat ja kattaus)
+# Tulostaa siis 'maitolasi'
+print()
+print(kattaus.intersection(astiat)) # Tulostaa kaiken sisällön joka on yhteistä molemmissa seteissä
+# Huomaa että sillä ei ole väliä kummin päin setit laittaa. sama tulos tulisi myös print(astiat.intersection(kattaus))
+print("------------------------------------------------------------------------")
+print()
+#------------------------------------------------------------------------------#
+  # Dictionary on tietorakenne, joka mahdollistaa avain-arvo -parien tallentamisen.
+    # Jokainen arvo on liitetty ainutlaatuiseen avainarvoon.
+    # Avain toimii tunnisteena arvolle.
+    # Voi muuttaa lisäämällä, muokkaamalla ja poistamalla avain-arvo -pareja.
+
+pääkaupungit = {'USA':'Washington DC',
+                'Intia':'New Delhi',
+                'Kiina':'Beijing',
+                'Venäjä':'Moskova'}
+
+print(pääkaupungit['Intia']) # Tulostaa 'New Delhi'
+# Huom: Jos yrittäisi tulostaa jotain mitä listassa ei ole, tulee error
+# Kuten: print (pääkaupungit['Ukraina']) antaisi errorin. Turvallisempaa käyttää .get metodia
+print(pääkaupungit.get('Ukraina')) # Palauttaa: None, joka kertoo että kyseistä arvoa ei ole pääkaupungeissa
+print()
+# voi myös tulostaa vain avaimet:
+print(pääkaupungit.keys())
+# tai vain arvot
+print(pääkaupungit.values())
+print()
+# tai MOLEMMAT
+print(pääkaupungit.items())
+
+# Toinen tapa olisi käyttää for looppia
+for k,v in pääkaupungit.items(): # k,v viittaa sanoihin key,value. 
+  # k ja v voivat olla myös mitä tahansa muutakin, koska in osassa viitataan .items, eli kaikkiin itemeihin dictionaryn sisällä
+    print(k, v) # tulostaa avaimet ja niiden arvot pareina
+print()
+
+# Voit lisätä pareja seuraavasti
+pääkaupungit.update({'Saksa':'Berliini'})
+# Tai myös päivittää jo olemassaolevaa tietoa
+pääkaupungit.update({'USA':'New York'}) # USA pääkaupunki muuttuu New Yorkiksi
+print(pääkaupungit)
+pääkaupungit.pop('Venäjä') # Poistaa venäjän kirjastosta (Ei maailmankartalta)
+pääkaupungit.clear() # Tyhjentää koko kirjaston
+pääkaupungit.update({'Venäjä':'Moskova'})
+# Lisätään varmuudenvuoksi venäjä takaisin listalle, koska ovat niin herkkiä ottamaan tällaiset asiat uhkauksina ;D
+
+print("------------------------------------------------------------------------")
+print()
+#------------------------------------------------------------------------------#
