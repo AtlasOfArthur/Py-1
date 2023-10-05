@@ -16,6 +16,15 @@ print(fNameToArt + " " + lName)
 print(funkyName)
 print(reversedName)
 print(funkyReversed_from_reversedName) #Oma räpellys testi. Näköjään toimii :)
+print()
+  # index operator []
+# l-c-name = name[-1] # hakee nimen viimeisen kirjaimen (a ja tallentaa sen (l-c-name muuttujaan))
+firstName = name[:5].upper() # muuttaa 5 ensimäistä kirjainta nimestä isoiksi.
+lastName = name[7:].lower() # muuttaa seitsemännestä indeksistä eteenpäin loppuun asti kaikki pieniksi kirjaimiksi.
+name = name.capitalize() # muuttaa kaikkien sanojen ensimäiset kirjaimet isoiksi
+print(firstName)
+print(lastName)
+print(name)
 print("------------------------------------------------------------------------")
 print()
 
