@@ -42,3 +42,44 @@ print(uP) # Tulostaa 37
 print("------------------------------------------------------------")
 print()
 #-------------------------------------------------------------#
+  # Avainsana argumentit
+
+def avainsanat(eka,toka,vika):
+    print("moi "+eka+toka+vika)
+
+avainsanat("Arthur","Atlas","Of") # Printtaa annetussa järjestyksessä
+avainsanat(vika="Arthur",eka="Atlas",toka="Of") #Printtaa oikeassa järjestyksessä kun viitataan avainsanoilla (eka,toka,vika)
+
+print("------------------------------------------------------------")
+print()
+#-------------------------------------------------------------#
+  #Sisäkkäinen funktiokutsu ~~'Ketjutettu funktiokutsu'
+  
+#Tapa1
+num = input("Anna positinen numero: ")
+num = float(num)
+num = abs(num)
+num = round(num)
+print(num)
+
+#Tapa2, Esimerkki1
+print(round(abs(float(input("Anna positiivinen numero: ")))))
+
+# Esimerkki2
+def neliojuuri(x):
+    return x ** 0.5
+
+def kahdella_korotettu(x):
+    return x ** 2
+
+def tuplattu(x):
+    return x * 2
+
+def vahennetty_kolmella(x):
+    return x - 3
+
+alkuluku = float(input("Syötä luku: "))
+
+tulos = vahennetty_kolmella(tuplattu(kahdella_korotettu(neliojuuri(alkuluku))))
+
+print("Tulos:", tulos)
