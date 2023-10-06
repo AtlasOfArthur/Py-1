@@ -163,8 +163,8 @@ print(pääkaupungit)
 pääkaupungit.pop('Venäjä') # Poistaa venäjän kirjastosta (Ei maailmankartalta)
 pääkaupungit.clear() # Tyhjentää koko kirjaston
 pääkaupungit.update({'Venäjä':'Moskova'})
-# Lisätään varmuudenvuoksi venäjä takaisin listalle, koska ovat niin herkkiä ottamaan tällaiset asiat uhkauksina ;D
-
+# Lisätään varmuudenvuoksi venäjä takaisin listalle, koska ovat niin herkkiä ottamaan tällaiset asiat uhkauksina ;D 
+print(pääkaupungit)
 print("------------------------------------------------------------------------")
 print()
 #------------------------------------------------------------------------------#
