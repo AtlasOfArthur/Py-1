@@ -22,7 +22,7 @@ print("The {2} jumped over the {1}, and {0} sneezed. {2} ...was stunned!".format
  # Parempi tapa:
 text = ("The {} jumped over the {}, and {} sneezed. {:10} ...was stunned!")
                           # Add (10) padding to right ^
-print(text.format(animal[3],item[0],animal[0],animal[1]))
+print(text.format(animal[1],item[1],animal[2],animal[3]))
 print()
 padding = 10 # voit määrittää paddingin sijainnin käyttämällä .rjust(), .ljust(), tai .center() 
 text2 = ("The {} jumped over the {}, and {} sneezed. {} ...was stunned!")
