@@ -13,3 +13,24 @@
      # Esim2: muotoiltu_str = "Hei, {nimi}! Olet {ika} vuotta vanha.".format(nimi=nimi, ika=ika)
      # Esim3: muotoiltu_str = "Hei, {0}! Olet {1} vuotta vanha, vai miten se nyt meni, {0}?".format(nimi, ika)
 
+ # Test >>> from lists
+animal = ["Elephant", "Cow", "Dog", "Rat"]
+item = ["Galaxy", "Solarsystem", "Moon", "Car", ]
+
+print("The {2} jumped over the {1}, and {0} sneezed. {2} ...was stunned!".format(animal[3],item[0],animal[2])) # OOO.. se toimiii! ^^
+
+ # Parempi tapa:
+text = ("The {} jumped over the {}, and {} sneezed. {:10} ...was stunned!")
+                          # Add (10) padding to right ^
+print(text.format(animal[3],item[0],animal[0],animal[1]))
+print()
+padding = 10 # voit määrittää paddingin sijainnin käyttämällä .rjust(), .ljust(), tai .center() 
+text2 = ("The {} jumped over the {}, and {} sneezed. {} ...was stunned!")
+
+print(text2.format(animal[3], item[0], animal[0], animal[1].center(padding))+" (Keskitetty)")
+print(text2.format(animal[3], item[0], animal[0], animal[1].ljust(padding))+" (Padding oikealla)")
+print(text2.format(animal[3], item[0], animal[0], animal[1].rjust(padding))+" (Padding vasemmalla)")
+
+print("------------------------------------------------------------------------")
+print()
+#------------------------------------------------------------------------------#
