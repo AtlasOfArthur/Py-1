@@ -30,4 +30,4 @@ print()
 kortit = [1,2,3,4,5,6,7,8,9,"J","Q","K","A"]
 käsi = random.sample(kortit, 5)
 print("Kädessäsi on kortit:",käsi) #Tulostaa korteista vain 5
-print()
+print() # https://docs.python.org/3/library/random.html
