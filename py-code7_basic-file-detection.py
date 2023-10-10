@@ -70,3 +70,4 @@ try:
         print(sijainti+" siirrettiin")
 except FileNotFoundError:
      print(sijainti+" ei havaittu")
+     # https://youtu.be/XKHEtdqhLK8?t=10625
